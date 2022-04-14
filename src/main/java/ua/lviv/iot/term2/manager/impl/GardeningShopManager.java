@@ -1,18 +1,16 @@
-package ua.lviv.iot.secondLaba.manager.impl;
+package ua.lviv.iot.term2.manager.impl;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-import ua.lviv.iot.secondLaba.manager.IGardeningShopManager;
-import ua.lviv.iot.secondLaba.model.Good;
+import ua.lviv.iot.term2.manager.IGardeningShopManager;
+import ua.lviv.iot.term2.model.Good;
 
 public class GardeningShopManager implements IGardeningShopManager{
 	
+	/*
 	private Map<String,List<Good>> goodsMap = new HashMap<>();
-	
 	@Override
 	public Good sale(String name) {
 		
@@ -68,5 +66,30 @@ public class GardeningShopManager implements IGardeningShopManager{
 		});
 		
 	}
+*/
 	
+	public List<Good> sortGoodsByCategory(List<Good> goods, boolean descendingOrder) {
+        if (descendingOrder) {
+            return goods.stream()
+                    .sorted(Comparator.comparing(Good::getCategory).reversed())
+                    .collect(Collectors.toList());
+        }
+        return goods.stream()
+                .sorted(Comparator.comparing(Good::getCategory))
+                .collect(Collectors.toList());
+
+    }
+	
+	public List<Good> sortGoodsByQuantity(List<Good> goods, boolean descendingOrder) {
+        if (descendingOrder) {
+            return goods.stream()
+                    .sorted(Comparator.comparing(Good::getQuantity).reversed())
+                    .collect(Collectors.toList());
+        }
+        return goods.stream()
+                .sorted(Comparator.comparing(Good::getQuantity))
+                .collect(Collectors.toList());
+
+    }
+
 }

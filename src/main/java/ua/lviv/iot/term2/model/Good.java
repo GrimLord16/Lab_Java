@@ -1,7 +1,8 @@
-package ua.lviv.iot.secondLaba.model;
+package ua.lviv.iot.term2.model;
 
-import java.util.List;
+import lombok.Getter;
 
+@Getter
 public abstract class Good {
 	
 	public Good(String name, int quantity, String category) {
@@ -22,28 +23,38 @@ public abstract class Good {
 	
 	private String category;
 
-	public String getName() {
-		return name;
-	}
-
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	@Override
+    public String toString() {
+        return "Good {" +
+                "name: " + name +
+                ", quantity = " + quantity +
+                ", category: " + category +
+                '}';
+    }
+
+	public String getName() {
+		return name;
 	}
 
 	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
 	public String getCategory() {
 		return category;
 	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	
 }
