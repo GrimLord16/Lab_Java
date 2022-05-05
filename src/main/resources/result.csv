@@ -1,0 +1,12 @@
+name, category, quantity
+, weightPerBagInKilo 
+phosphate, fertilizers, 10
+, 5.0 
+name, category, quantity
+, lengthInMeters
+shneider, hoses, 20
+,20.0
+name, category, quantity
+, weightPerPacketInGrams
+tomato seeds, seeds, 30
+,50.0
