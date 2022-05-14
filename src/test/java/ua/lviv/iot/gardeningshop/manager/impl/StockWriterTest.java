@@ -1,6 +1,6 @@
 package ua.lviv.iot.gardeningshop.manager.impl;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ua.lviv.iot.gardeningshop.models.Fertilizer;
@@ -46,15 +46,4 @@ class StockWriterTest {
         }
     }
 
-   /* @Test
-    void writeCSV() throws IOException {
-        try (FileReader expectedReader = new FileReader("src/test/resources/expected.csv");
-             BufferedReader expectedBR = new BufferedReader(expectedReader);
-             FileReader actualReader = new FileReader("src/main/resources/result.csv");
-             BufferedReader actualBR = new BufferedReader(actualReader)) {
-            String line1 = expectedBR.readLine();
-            String line2 = actualBR.readLine();
-            Assertions.assertEquals(line1, line2);
-        }
-    }*/
 }
