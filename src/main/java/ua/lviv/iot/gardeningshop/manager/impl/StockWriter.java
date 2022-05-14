@@ -1,5 +1,6 @@
 package ua.lviv.iot.gardeningshop.manager.impl;
 
+import org.jetbrains.annotations.NotNull;
 import ua.lviv.iot.gardeningshop.manager.IStockWriter;
 import ua.lviv.iot.gardeningshop.models.Good;
 
@@ -9,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class StockWriter implements IStockWriter {
-    public void writeToFile(List<Good> goods) {
+    public void writeToFile(@NotNull List<Good> goods) {
         try {
             File file = new File(String.format("%s%s%s%s%s", System.getProperty("user.dir"), File.separator, "src\\main\\resources", File.separator, "result.csv"));
             file.createNewFile();
